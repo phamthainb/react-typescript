@@ -1,24 +1,32 @@
-import homeReducer from '../reducer';
-import { changeUsername } from '../actions';
+import homePageReducer from '../reducer';
+// import { someAction } from '../actions';
 import { ContainerState } from '../types';
 
-describe('homeReducer', () => {
+describe('homePageReducer', () => {
   let state: ContainerState;
   beforeEach(() => {
     state = {
-      username: '',
+      default: null,
     };
   });
 
-  it('should return the initial state', () => {
+  it('returns the initial state', () => {
     const expectedResult = state;
-    expect(homeReducer(undefined, {} as any)).toEqual(expectedResult);
+    // eslint-disable-next-line prettier/prettier
+    expect(
+      homePageReducer(undefined, {} as any),
+    ).toEqual(expectedResult);
   });
 
-  it('should handle the changeUsername action correctly', () => {
-    const fixture = 'mxstbr';
-    const expectedResult = { username: fixture };
-
-    expect(homeReducer(state, changeUsername(fixture))).toEqual(expectedResult);
-  });
+  /**
+   * Example state change comparison
+   *
+   * it('should handle the someAction action correctly', () => {
+   *   const expectedResult = {
+   *     loading = true;
+   *   );
+   *
+   *   expect(appReducer(state, someAction())).toEqual(expectedResult);
+   * });
+   */
 });

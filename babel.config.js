@@ -13,6 +13,7 @@ module.exports = {
     'babel-plugin-styled-components',
     '@babel/plugin-proposal-class-properties',
     '@babel/plugin-syntax-dynamic-import',
+    '@babel/plugin-transform-react-jsx-source',
   ],
   env: {
     production: {

@@ -1,6 +1,5 @@
 import { ActionType } from 'typesafe-actions';
 import * as actions from './actions';
-import { Repo } from '../RepoListItem/types';
 
 /* --- STATE --- */
 
@@ -11,9 +10,7 @@ interface AppState {
   readonly userData: UserData;
 }
 
-interface UserData {
-  readonly repos?: Repo[];
-}
+interface UserData {}
 
 /* --- ACTIONS --- */
 type AppActions = ActionType<typeof actions>;

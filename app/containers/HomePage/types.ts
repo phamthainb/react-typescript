@@ -2,17 +2,15 @@ import { ActionType } from 'typesafe-actions';
 import * as actions from './actions';
 
 /* --- STATE --- */
-
-interface HomeState {
-  readonly username: string;
+interface HomePageState {
+  readonly default: any;
 }
 
 /* --- ACTIONS --- */
-type AppActions = ActionType<typeof actions>;
+type HomePageActions = ActionType<typeof actions>;
 
 /* --- EXPORTS --- */
-
-type ContainerState = HomeState;
-type ContainerActions = AppActions;
+type ContainerState = HomePageState;
+type ContainerActions = HomePageActions;
 
 export { ContainerState, ContainerActions };

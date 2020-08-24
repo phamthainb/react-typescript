@@ -1,83 +1,58 @@
 /**
- * Test the HomePage
+ *
+ * Tests for HomePage
+ *
+ * @see https://github.com/react-boilerplate/react-boilerplate/tree/master/docs/testing
+ *
  */
 
 import React from 'react';
-import { render, cleanup, fireEvent } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { IntlProvider } from 'react-intl';
 import { Provider } from 'react-redux';
+import history from 'utils/history';
 
-import * as appActions from 'containers/App/actions';
-import { HelmetProvider } from 'react-helmet-async';
-
-import configureStore from '../../../configureStore';
 import HomePage from '../index';
-import { initialState } from '../reducer';
-import { changeUsername } from '../actions';
-import history from '../../../utils/history';
-
-jest.mock('containers/App/actions');
-
-const renderHomePage = store =>
-  render(
-    <Provider store={store}>
-      <IntlProvider locale="en">
-        <HelmetProvider>
-          <HomePage />
-        </HelmetProvider>
-      </IntlProvider>
-    </Provider>,
-  );
-
+import { DEFAULT_LOCALE } from '../../../locales';
+import configureStore from '../../../configureStore';
 describe('<HomePage />', () => {
   let store;
-  const mockedLoadRepos = appActions.loadRepos as jest.Mock;
-
-  beforeAll(() => {
-    // loadRepos is mocked so that we can spy on it but also so that it doesn't trigger a network request
-    mockedLoadRepos.mockImplementation(() => ({ type: '' }));
-  });
 
   beforeEach(() => {
     store = configureStore({}, history);
-    mockedLoadRepos.mockClear();
   });
 
-  afterEach(cleanup);
+  it('Expect to not log errors in console', () => {
+    const spy = jest.spyOn(global.console, 'error');
+    render(
+      <Provider store={store}>
+        <IntlProvider locale={DEFAULT_LOCALE}>
+          <HomePage />
+        </IntlProvider>
+      </Provider>,
+    );
+    expect(spy).not.toHaveBeenCalled();
+  });
 
-  it('should render and match the snapshot', () => {
+  it('Expect to have additional unit tests specified', () => {
+    expect(true).toEqual(false);
+  });
+
+  /**
+   * Unskip this test to use it
+   *
+   * @see {@link https://jestjs.io/docs/en/api#testskipname-fn}
+   */
+  it.skip('Should render and match the snapshot', () => {
     const {
       container: { firstChild },
-    } = renderHomePage(store);
+    } = render(
+      <Provider store={store}>
+        <IntlProvider locale={DEFAULT_LOCALE}>
+          <HomePage />
+        </IntlProvider>
+      </Provider>,
+    );
     expect(firstChild).toMatchSnapshot();
-  });
-
-  it('shouldn`t fetch repos on mount (if username is empty)', () => {
-    renderHomePage(store);
-    expect(initialState.username).toBe('');
-    expect(appActions.loadRepos).not.toHaveBeenCalled();
-  });
-
-  it('shouldn`t fetch repos if the form is submitted when the username is empty', () => {
-    const { container } = renderHomePage(store);
-
-    const form = container.querySelector('form')!;
-    fireEvent.submit(form);
-
-    expect(appActions.loadRepos).not.toHaveBeenCalled();
-  });
-
-  it('should fetch repos if the form is submitted when the username isn`t empty', () => {
-    const { container } = renderHomePage(store);
-
-    store.dispatch(changeUsername('julienben'));
-
-    const input = container.querySelector('input')!;
-    fireEvent.change(input, { target: { value: 'julienben' } });
-    expect(appActions.loadRepos).not.toHaveBeenCalled();
-
-    const form = container.querySelector('form')!;
-    fireEvent.submit(form);
-    expect(appActions.loadRepos).toHaveBeenCalled();
   });
 });

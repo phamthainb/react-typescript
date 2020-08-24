@@ -6,18 +6,14 @@ import * as actions from './actions';
 interface AppState {
   readonly loading: boolean;
   readonly error?: object | boolean;
-  readonly currentUser: string;
-  readonly userData: UserData;
+  readonly auth: boolean;
 }
-
-interface UserData {}
 
 /* --- ACTIONS --- */
 type AppActions = ActionType<typeof actions>;
 
 /* --- EXPORTS --- */
-
 type ContainerState = AppState;
 type ContainerActions = AppActions;
 
-export { ContainerState, ContainerActions, UserData };
+export { ContainerState, ContainerActions };

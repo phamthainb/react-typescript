@@ -14,7 +14,7 @@ import history from 'utils/history';
 
 import HomePage from '../index';
 import { DEFAULT_LOCALE } from '../../../locales';
-import configureStore from '../../../configureStore';
+import configureStore from '../../../initRedux/configureStore';
 describe('<HomePage />', () => {
   let store;
 

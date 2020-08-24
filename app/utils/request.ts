@@ -1,3 +1,5 @@
+import { changeAuth } from 'containers/App/actions';
+
 export class ResponseError extends Error {
   public response: Response;
 
@@ -45,11 +47,38 @@ function checkStatus(response: Response) {
  *
  * @return {object}           The response data
  */
-export default async function request(
+export async function request(
   url: string,
   options?: RequestInit,
 ): Promise<{} | { err: ResponseError }> {
   const fetchResponse = await fetch(url, options);
+  const response = await checkStatus(fetchResponse);
+  return parseJSON(response);
+}
+
+/**
+ * Auth Requests a URL, returning a promise
+ *
+ * @param  {string} url       The URL we want to request
+ * @param  {object} [options] The options we want to pass to "fetch"
+ *
+ * @return {object}           The response data
+ */
+export async function authRequest(
+  url: string,
+  options?: RequestInit,
+): Promise<{} | { err: ResponseError }> {
+  let token = localStorage.getItem('token');
+  if (token) {
+    token = JSON.parse(token);
+  } else changeAuth(true);
+
+  const fetchResponse = await fetch(url, {
+    ...options,
+    headers: new Headers({
+      Authorization: `Bearer ${token}`,
+    }),
+  });
   const response = await checkStatus(fetchResponse);
   return parseJSON(response);
 }

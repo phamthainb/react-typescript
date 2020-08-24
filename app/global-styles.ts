@@ -32,6 +32,19 @@ const GlobalStyle = createGlobalStyle`
     font-family: inherit;
     font-size: inherit;
   }
+  /* // react modal */
+  .ReactModal__Overlay {
+    opacity: 0;
+    transition: all 0.5s ease;
+  }
+
+  .ReactModal__Overlay--after-open{
+      opacity: 1;
+  }
+
+  .ReactModal__Overlay--before-close{
+      opacity: 0;
+  }
 `;
 
 export default GlobalStyle;

@@ -15,6 +15,7 @@ import NotFoundPage from 'containers/NotFoundPage/Loadable';
 
 import GlobalStyle from '../../global-styles';
 import { BaseCSS } from 'styled-bootstrap-grid';
+
 // page
 import HomePage from 'containers/HomePage';
 

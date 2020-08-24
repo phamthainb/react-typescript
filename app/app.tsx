@@ -30,7 +30,8 @@ import 'file-loader?name=.htaccess!./.htaccess';
 
 import { HelmetProvider } from 'react-helmet-async';
 
-import configureStore from './configureStore';
+// import Store Redux
+import store from 'initRedux';
 
 // Import i18n messages
 import { translationMessages } from 'i18n';
@@ -44,9 +45,6 @@ openSansObserver.load().then(() => {
   document.body.classList.add('fontLoaded');
 });
 
-// Create redux store with history
-const initialState = {};
-const store = configureStore(initialState, history);
 const MOUNT_NODE = document.getElementById('app') as HTMLElement;
 
 const ConnectedApp = (props: { messages: any }) => (

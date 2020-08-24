@@ -3,7 +3,7 @@
  */
 import { composeWithDevTools } from 'redux-devtools-extension';
 import history from '../utils/history';
-import configureStore from '../configureStore';
+import configureStore from '../initRedux/configureStore';
 
 describe('configureStore', () => {
   it('should return a redux store', () => {

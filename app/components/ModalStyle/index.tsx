@@ -18,11 +18,12 @@ interface Props {
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
   children: React.ReactNode;
+  hasTemplate: boolean;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function ModalStyle(props: Props) {
-  const { dontCloseOutside, isOpen, setIsOpen } = props;
+  const { dontCloseOutside, isOpen, setIsOpen, hasTemplate } = props;
 
   const customStyle = {
     overlay: {
@@ -58,9 +59,15 @@ function ModalStyle(props: Props) {
       style={customStyle}
     >
       <StylesModal>
-        <div className="modal-header">header</div>
-        <div className="modal-content">{props.children}</div>
-        <div className="modal-footer">footer</div>
+        {hasTemplate ? (
+          <>
+            <div className="modal-header">header</div>
+            <div className="modal-content">{props.children}</div>
+            <div className="modal-footer">footer</div>
+          </>
+        ) : (
+          <p>{props.children}</p>
+        )}
       </StylesModal>
     </Modal>
   );

@@ -10,6 +10,7 @@ import * as React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Switch, Route } from 'react-router-dom';
 import { hot } from 'react-hot-loader/root';
+import Modal from 'react-modal';
 
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 
@@ -18,7 +19,9 @@ import { BaseCSS } from 'styled-bootstrap-grid';
 
 // page
 import HomePage from 'containers/HomePage';
-
+import LoadingGlobal from 'components/LoadingGlobal';
+//
+Modal.setAppElement('#app');
 function App() {
   return (
     <div>
@@ -29,6 +32,7 @@ function App() {
         <Route exact path="/" component={HomePage} />
         <Route component={NotFoundPage} />
       </Switch>
+      <LoadingGlobal />
       <GlobalStyle />
       <BaseCSS />
     </div>

@@ -1,5 +1,14 @@
 {
+  "app.components.CkEditer.header": "",
   "app.components.ErrorBound.content": "",
+  "app.components.MenuBar.header": "",
+  "app.components.ModalWrap.header": "",
+  "app.containers.CoreOnePage.header": "",
+  "app.containers.CoreTWoPage.header": "CoreOnePage english",
   "app.containers.HomePage.header": "This is the HomePage container!",
+  "app.containers.Names.routes.about": "",
+  "app.containers.Names.routes.index": "xxxxxxx",
+  "app.containers.Names.routes.support": "",
+  "app.containers.Routers.header": "",
   "boilerplate.containers.NotFoundPage.header": "Page not found."
 }

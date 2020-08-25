@@ -10,6 +10,7 @@
 enum ActionTypes {
   LOADING = 'app/LOADING',
   AUTH = 'app/AUTH',
+  LOCATION = 'app/LOCATION',
 }
 
 export default ActionTypes;

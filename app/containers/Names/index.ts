@@ -1,14 +1,13 @@
 /*
  *
- * Names
+ * Define Names constant for APP
  *
  */
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import messages from './messages';
+import * as messages from './messages';
 
-export const NAMES = {
-  ROUTES: [],
-};
-export const VALIDATES = {};
-export const RESPONSES = {};
+export const NAME_ROUTES = Object.values(messages.routes);
+export const NAME_NAMES = {};
+export const NAME_VALIDATES = {};
+export const NAME_RESPONSES = {};

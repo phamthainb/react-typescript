@@ -1,5 +1,14 @@
 {
+  "app.components.CkEditer.header": "This is the CkEditer component!",
   "app.components.ErrorBound.content": "Có lỗi xảy ra.",
+  "app.components.MenuBar.header": "This is the MenuBar component!",
+  "app.components.ModalWrap.header": "This is the ModalWrap component!",
+  "app.containers.CoreOnePage.header": "This is the CoreOnePage container!",
+  "app.containers.CoreTWoPage.header": "This is the CoreTWoPage container!",
   "app.containers.HomePage.header": "đây là header",
+  "app.containers.Names.routes.about": "chi tiet",
+  "app.containers.Names.routes.index": "trang chu",
+  "app.containers.Names.routes.support": "ho tro",
+  "app.containers.Routers.header": "This is the Routers container!",
   "boilerplate.containers.NotFoundPage.header": "Page not found."
 }

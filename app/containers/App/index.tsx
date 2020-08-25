@@ -20,6 +20,8 @@ import { BaseCSS } from 'styled-bootstrap-grid';
 // page
 import HomePage from 'containers/HomePage';
 import LoadingGlobal from 'components/LoadingGlobal';
+import CoreOnePage from 'containers/CoreOnePage';
+import CoreTWoPage from 'containers/CoreTWoPage';
 //
 Modal.setAppElement('#app');
 function App() {
@@ -30,6 +32,8 @@ function App() {
       </Helmet>
       <Switch>
         <Route exact path="/" component={HomePage} />
+        <Route exact path="/core-one-page" component={CoreOnePage} />
+        <Route exact path="/core-two-page" component={CoreTWoPage} />
         <Route component={NotFoundPage} />
       </Switch>
       <LoadingGlobal />

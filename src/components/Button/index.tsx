@@ -1,20 +1,10 @@
 /**
-*
-* Button
-*
-*/
-import React, { memo } from 'react';
-import styled from 'styled-components';
+ *
+ * Button
+ *
+ */
+import styled from "styled-components";
 
-interface Props {}
+const Button = styled.button``;
 
-function Button({}: Props) {
-return (
-<StylesButton>
-  Button
-</StylesButton>
-);
-};
-const StylesButton = styled.div``;
-
-export default memo(Button);
+export default Button;

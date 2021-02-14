@@ -22,17 +22,21 @@
     "express": "^4.17.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-modal": "^3.11.2",
+    "react-hook-form": "^6.8.4",
+    "react-intl": "^5.8.2",
     "react-redux": "^7.2.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
     "styled-components": "^5.2.0",
-    "typescript": "~3.7.2"
+    "sweetalert2": "^10.3.0",
+    "typesafe-actions": "^5.1.0",
+    "typescript": "^4.0.3"
   },
   "scripts": {
-    "generate": "plop --plopfile generators/index.js",
+    "generate": "plop --plopfile internals/generators/index.js",
+    "extract": "extract-messages --flat=true -d=vi --locales=en,vi --output src/assets/languages 'src/**/message.ts'",
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
@@ -54,7 +58,10 @@
     ]
   },
   "devDependencies": {
+    "@formatjs/cli": "^2.11.3",
+    "babel-plugin-react-intl": "^8.2.3",
     "react-app-rewire-alias": "^0.1.6",
-    "react-app-rewired": "^2.1.6"
+    "react-app-rewired": "^2.1.6",
+    "ts-loader": "^8.0.4"
   }
 }

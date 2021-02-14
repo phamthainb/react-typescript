@@ -26,7 +26,7 @@ module.exports = {
     const actions = [
       {
         type: "add",
-        path: `../src/components/${
+        path: `../../src/components/${
           data.path ? data.path + "/" : ""
         }{{properCase name}}/index.tsx`,
         templateFile: "./components/index.tsx.hbs",

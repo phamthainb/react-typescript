@@ -3,7 +3,12 @@
     "baseUrl": ".",
     "paths": {
       "@containers/*": ["src/containers/*"],
-      "@components/*": ["src/components/*"]
+      "@components/*": ["src/components/*"],
+      "@assets/*": ["src/assets/*"],
+      "@styles/*": ["src/styles/*"],
+      "@configs/*": ["src/configs/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@redux/*": ["src/redux/*"]
     },
 
     "target": "es5",

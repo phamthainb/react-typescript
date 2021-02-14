@@ -19,6 +19,6 @@ app.get('*', (req, res) => {
 
 const port = process.env.PORT || 6061;
 
-console.log("" + new Date().toLocaleTimeString() + ": port", port)
+console.log('' + new Date().toLocaleTimeString() + ': port', port);
 
 app.listen(port, () => console.log(`Server running on ${port}`));

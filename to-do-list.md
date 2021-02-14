@@ -1,0 +1,2 @@
+[] injectReducer
+[] multiple theme

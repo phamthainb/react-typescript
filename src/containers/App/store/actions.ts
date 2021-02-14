@@ -3,14 +3,10 @@
  * App actions
  *
  */
-import * as types from "./constants";
+import * as types from './constants';
+import { AppLanguage } from './types';
+import { action } from 'typesafe-actions';
 
-export const changeLogin = (val: boolean) => ({
-  type: types.LOGIN,
-  payload: val,
-});
+export const changeLogin = (val: boolean) => action(types.LOGIN, val);
 
-export const changeLanguage = (val: string) => ({
-  type: types.LANGUAGE,
-  payload: val,
-});
+export const changeLanguage = (val: AppLanguage) => action(types.LANGUAGE, val);

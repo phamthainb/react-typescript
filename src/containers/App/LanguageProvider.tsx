@@ -1,12 +1,12 @@
-import React, { ReactElement } from "react";
-import { IntlProvider } from "react-intl";
-import { useSelector } from "react-redux";
-import { selectAppStore } from "./store/selecters";
+import React, { ReactElement } from 'react';
+import { IntlProvider } from 'react-intl';
+import { useSelector } from 'react-redux';
+import { selectAppStore } from './store/selecters';
 // json
-import vi from "@assets/languages/vi.json";
-import en from "@assets/languages/en.json";
+import vi from '@assets/languages/vi.json';
+import en from '@assets/languages/en.json';
 
-const translates = {
+const translatesJson = {
   vi: vi,
   en: en,
 };
@@ -20,10 +20,12 @@ export default function LanguageProvider({ children }: Props): ReactElement {
   return (
     <IntlProvider
       locale={lang}
-      messages={translates[lang]}
-      defaultLocale={"vi"}
+      messages={translatesJson[lang]}
+      defaultLocale={'vi'}
     >
       {children}
     </IntlProvider>
   );
 }
+
+export { translatesJson };

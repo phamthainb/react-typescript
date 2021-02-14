@@ -3,12 +3,13 @@
  * App reducers
  *
  */
-import * as types from "./constants";
-import { ActionsApp, AppStore } from "./types";
+import * as types from './constants';
+import { ActionsApp, AppStore } from './types';
 
 const initState: AppStore = {
   login: false,
-  lang: "vi",
+  lang: 'vi',
+  loading: false,
 };
 
 const reducersApp = (state = initState, actions: ActionsApp) => {

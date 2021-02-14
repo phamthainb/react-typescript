@@ -9,17 +9,13 @@ import "sweetalert2/dist/sweetalert2.min.css";
 import Home from "@containers/Home";
 import Loading from "@components/Loading";
 import { useSelector } from "react-redux";
-import { selectLayOutStore } from "@containers/LayOutDash/store/selecters";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import LayOutDash from "@containers/LayOutDash";
 import NotFoundPage from "@components/NotFoundPage";
 import { selectAppStore } from "./store/selecters";
 import LanguageProvider from "./LanguageProvider";
 
 function App() {
-  const { loading } = useSelector(selectLayOutStore);
-  const { login } = useSelector(selectAppStore);
-  console.log("login", login);
+  const { loading } = useSelector(selectAppStore);
 
   return (
     <LanguageProvider>
@@ -28,9 +24,6 @@ function App() {
           <Switch>
             <Route exact path="/">
               <Home />
-            </Route>
-            <Route>
-              <LayOutDash />
             </Route>
             <Route path="*">
               <NotFoundPage />

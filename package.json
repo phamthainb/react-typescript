@@ -38,6 +38,7 @@
     "generate": "plop --plopfile internals/generators/index.js",
     "extract": "extract-messages --flat=true -d=vi --locales=en,vi --output src/assets/languages 'src/**/message.ts'",
     "start": "react-app-rewired start",
+    "start-dev": "concurrently --kill-others \"./node_modules/.bin/json-server --watch fake-api/db.json --port 3000 --static fake-api/static\" \"react-app-rewired start\"",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject"
@@ -60,6 +61,8 @@
   "devDependencies": {
     "@formatjs/cli": "^2.11.3",
     "babel-plugin-react-intl": "^8.2.3",
+    "concurrently": "6.0.0",
+    "json-server": "0.16.3",
     "react-app-rewire-alias": "^0.1.6",
     "react-app-rewired": "^2.1.6",
     "ts-loader": "^8.0.4"

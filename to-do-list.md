@@ -1,3 +1,3 @@
-[] injectReducer
-[] multiple theme
-[x] multiple language
+- [] injectReducer
+- [] multiple theme
+- [x] multiple language

@@ -10,7 +10,12 @@
       "@hooks/*": ["src/hooks/*"],
       "@redux/*": ["src/redux/*"]
     },
-
+    "plugins": [
+      {
+        "name": "typescript-styled-plugin",
+        "tags": ["styled", "css"]
+      }
+    ],
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,

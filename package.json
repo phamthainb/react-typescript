@@ -25,7 +25,7 @@
     "generate": "plop --plopfile internals/generators/index.js",
     "extract": "extract-messages --flat=true -d=vi --locales=en,vi --output src/assets/languages 'src/**/message.ts'",
     "start": "react-app-rewired start",
-    "start-dev": "concurrently --kill-others \"./node_modules/.bin/json-server --watch fake-api/db.json --port 3001 --static fake-api/static\" \"react-app-rewired start\"",
+    "start-dev": "concurrently --kill-others \"./node_modules/.bin/json-server --watch fake-api/db.js --port 3001 --static fake-api/static\" \"react-app-rewired start\"",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject"

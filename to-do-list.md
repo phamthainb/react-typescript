@@ -1,3 +1,5 @@
-- [] injectReducer
+- [x] injectReducer
 - [] multiple theme
-- [x] multiple language
+- [] multiple language
+- [] api request common
+- 

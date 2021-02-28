@@ -1,5 +1,5 @@
 {
-  "name": "phamthainb-react-ap",
+  "name": "phamthainb-react-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -7,6 +7,7 @@
     "@ckeditor/ckeditor5-react": "^2.1.0",
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
     "@fortawesome/react-fontawesome": "^0.1.11",
+    "axios": "^0.21.1",
     "dotenv": "^8.2.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -25,7 +26,7 @@
     "generate": "plop --plopfile internals/generators/index.js",
     "extract": "extract-messages --flat=true -d=vi --locales=en,vi --output src/assets/languages 'src/**/message.ts'",
     "start": "react-app-rewired start",
-    "start-dev": "concurrently --kill-others \"./node_modules/.bin/json-server --watch fake-api/db.js --port 3001 --static fake-api/static\" \"react-app-rewired start\"",
+    "dev": "concurrently --kill-others \"./node_modules/.bin/json-server --watch fake-api/db.js --port 3001 --static fake-api/static --delay 1000\" \"react-app-rewired start\"",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject"

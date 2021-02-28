@@ -13,6 +13,7 @@ import message from './message';
 
 import reducersHome from './store/reducers';
 import useInjectReducer from '@redux/useInjectReducer';
+import { requestInter } from '@api/axios';
 
 interface Props {}
 
@@ -22,7 +23,6 @@ type LoginFormData = {
 };
 // eslint-disable-next-line
 function Home({}: Props) {
- 
   useInjectReducer('Home', reducersHome);
 
   const { register, handleSubmit } = useForm<LoginFormData>();
@@ -45,7 +45,14 @@ function Home({}: Props) {
           />
         </div>
 
-        <Button type="submit">Login</Button>
+        <Button
+          type="button"
+          onClick={() => {
+            requestInter({ method: 'GET', url: '/users' });
+          }}
+        >
+          Login
+        </Button>
       </form>
     </ErrorBound>
   );

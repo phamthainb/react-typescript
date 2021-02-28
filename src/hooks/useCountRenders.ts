@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { useRef } from 'react';
 
 const useCountRenders = (name?: string) => {

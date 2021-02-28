@@ -14,8 +14,6 @@ const composeWith = hasExtension
   ? compose(applyMiddleware(thunk), hasExtension)
   : compose(applyMiddleware(thunk));
 
-// const store = createStore(rootReducer, composeWith);
-
 const staticReducers = {
   App: App,
 };

@@ -3,12 +3,13 @@
 * {{properCase name }} reducers
 * make by phamthainb
 */
+import { Reducer } from 'redux';
 import * as types from './constants';
-import { Actions{{properCase name }}, {{properCase name }}Store } from "./types";
+import { Actions{{properCase name }}, Store{{properCase name }} } from "./types";
 
-const initState : {{properCase name }}Store = { };
+const initState : Store{{properCase name }} = { };
 
-const reducers{{properCase name }} = (state = initState, actions: Actions{{properCase name }}) => {
+const reducers{{properCase name }} : Reducer<Store{{properCase name }}, Actions{{properCase name }}> = (state = initState, actions: Actions{{properCase name }}) => {
 switch (actions.type) {
 default:
 return { ...state };

@@ -1,3 +1,9 @@
+/**
+ * This file export all of type the Reducers
+ * File is export only type, not the logic
+ * phamthainb
+ */
+
 import { combineReducers } from 'redux';
 import App from '@containers/App/store/reducers';
 import Home from '@containers/Home/store/reducers';

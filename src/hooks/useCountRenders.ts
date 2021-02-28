@@ -1,4 +1,5 @@
-import { useRef, useEffect } from 'react';
+/* eslint-disable no-console */
+import { useRef } from 'react';
 
 const useCountRenders = (name?: string) => {
   const ref = useRef(0);

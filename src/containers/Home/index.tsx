@@ -7,18 +7,28 @@
 import React, { memo } from 'react';
 import ErrorBound from '@components/ErrorBound';
 import { useForm } from 'react-hook-form';
-import { LoginFormData } from './store/types';
 import Button from '@components/Button';
 import { useIntl } from 'react-intl';
 import message from './message';
 
+import reducersHome from './store/reducers';
+import useInjectReducer from '@redux/useInjectReducer';
+
 interface Props {}
 
+type LoginFormData = {
+  phone: string;
+  password: string;
+};
 // eslint-disable-next-line
 function Home({}: Props) {
+ 
+  useInjectReducer('Home', reducersHome);
+
   const { register, handleSubmit } = useForm<LoginFormData>();
   const onSubmit = (data: LoginFormData) => console.log(data);
   const intl = useIntl();
+
   return (
     <ErrorBound>
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -34,14 +44,7 @@ function Home({}: Props) {
             ref={register({ required: true })}
           />
         </div>
-        <div>
-          <p>Sdt</p>
-          <input
-            type="checkbox"
-            name="type"
-            ref={register({ required: true })}
-          />
-        </div>
+
         <Button type="submit">Login</Button>
       </form>
     </ErrorBound>

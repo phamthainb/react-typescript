@@ -1,7 +1,7 @@
 /*
-*
-* Home constants
-*
-*/
+ *
+ * Home constants
+ *
+ */
 
-export const LOGIN = 'Home/LOGIN';
+export const TEST = 'HOME/TEST';

@@ -3,9 +3,9 @@
  * Home actions
  */
 
-import * as types from "./constants";
+import * as types from './constants';
 
-export const changeLogin = (val: boolean) => ({
-  type: types.LOGIN,
+export const changeTest = (val: boolean) => ({
+  type: types.TEST,
   payload: val,
 });

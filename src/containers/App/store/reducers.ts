@@ -3,21 +3,25 @@
  * App reducers
  *
  */
+import { Reducer } from 'redux';
 import * as types from './constants';
 import { ActionsApp, AppStore } from './types';
 import { AppLanguage } from './types';
 
 const initState: AppStore = {
-  login: false,
-  lang: AppLanguage.vi,
+  lang: AppLanguage['vi'],
   loading: false,
 };
 
-const reducersApp = (state = initState, actions: ActionsApp): AppStore => {
+const reducersApp: Reducer<AppStore, ActionsApp> = (
+  state = initState,
+  actions: ActionsApp,
+) => {
   switch (actions.type) {
-    case types.LOGIN: {
-      return { ...state, login: actions.payload };
+    case types.LOADING: {
+      return { ...state, loading: actions.payload };
     }
+
     case types.LANGUAGE: {
       return { ...state, lang: actions.payload };
     }

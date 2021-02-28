@@ -5,6 +5,7 @@ import { selectAppStore } from './store/selecters';
 // json
 import vi from '@assets/languages/vi.json';
 import en from '@assets/languages/en.json';
+import useCountRenders from '@hooks/useCountRenders';
 
 const translatesJson = {
   vi: vi,
@@ -17,6 +18,9 @@ interface Props {
 
 export default function LanguageProvider({ children }: Props): ReactElement {
   const { lang } = useSelector(selectAppStore);
+  
+  useCountRenders('LanguageProvider');
+  
   return (
     <IntlProvider
       locale={lang}

@@ -1,8 +1,8 @@
 /*
-*
-* App constants
-*
-*/
+ *
+ * App constants
+ *
+ */
 
-export const LOGIN = 'App/LOGIN';
 export const LANGUAGE = 'App/LANGUAGE';
+export const LOADING = 'App/LOADING';

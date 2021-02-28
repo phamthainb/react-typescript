@@ -12,7 +12,7 @@ const intl = () => {
   return createIntl(
     {
       locale: App?.lang || 'vi',
-      messages: translatesJson[App?.lang || 'vi'],
+      messages: translatesJson['vi'],
     },
     cache,
   );

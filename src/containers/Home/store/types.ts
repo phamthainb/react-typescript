@@ -1,13 +1,9 @@
-import * as actions from "./actions";
-import { ActionType } from "typesafe-actions";
-import { AppRole } from "@containers/App/store/types";
+import * as actions from './actions';
+import { ActionType } from 'typesafe-actions';
 
-export interface HomeStore {}
-
-export type LoginFormData = {
-  phone: string;
-  password: string;
-  type: AppRole;
-};
+export interface HomeStore {
+  test: boolean;
+  str: string;
+}
 
 export type ActionsHome = ActionType<typeof actions>;

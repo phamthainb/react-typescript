@@ -16,7 +16,6 @@ import LanguageProvider from './LanguageProvider';
 
 function App() {
   const { loading } = useSelector(selectAppStore);
-  console.log('hi');
   return (
     <LanguageProvider>
       <ThemeProvider theme={theme}>

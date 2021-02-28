@@ -38,6 +38,12 @@ module.exports = {
       },
       {
         type: "add",
+        path: path + "/store/message-trans.ts",
+        templateFile: "./containers/message-trans.ts.hbs",
+        abortOnFail: true,
+      },
+      {
+        type: "add",
         path: path + "/store/actions.ts",
         templateFile: "./containers/actions.ts.hbs",
         abortOnFail: true,
@@ -58,6 +64,12 @@ module.exports = {
         type: "add",
         path: path + "/store/selecters.ts",
         templateFile: "./containers/selecters.ts.hbs",
+        abortOnFail: true,
+      },
+      {
+        type: "add",
+        path: path + "/style/index.ts",
+        templateFile: "./containers/styles-styled.ts.hbs",
         abortOnFail: true,
       },
       {

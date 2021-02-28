@@ -13,9 +13,11 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import NotFoundPage from '@components/NotFoundPage';
 import { selectAppStore } from './store/selecters';
 import LanguageProvider from './LanguageProvider';
+import useCountRenders from '@hooks/useCountRenders';
 
 function App() {
   const { loading } = useSelector(selectAppStore);
+  useCountRenders('App');
   return (
     <LanguageProvider>
       <ThemeProvider theme={theme}>

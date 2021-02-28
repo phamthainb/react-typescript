@@ -22,6 +22,7 @@ type LoginFormData = {
 };
 // eslint-disable-next-line
 function Home({}: Props) {
+ 
   useInjectReducer('Home', reducersHome);
 
   const { register, handleSubmit } = useForm<LoginFormData>();

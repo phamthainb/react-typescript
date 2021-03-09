@@ -4,8 +4,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Deploy 
 - With Docker && Nginx server
 ```
-docker build -t phamthainb/react:v1 .
-docker run --rm -it -p 8080:80 phamthainb/react:v1
+docker build -t phamthainb/{name}:v1 .
+docker run --rm -it -p 8080:80 phamthainb/{name}:v1
 ```
 ## Available Scripts
 

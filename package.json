@@ -73,6 +73,7 @@
     "concurrently": "6.0.0",
     "customize-cra": "^1.0.0",
     "json-server": "0.16.3",
+    "plop": "^2.7.4",
     "react-app-rewire-alias": "^0.1.6",
     "react-app-rewired": "^2.1.6",
     "ts-loader": "^8.0.4",

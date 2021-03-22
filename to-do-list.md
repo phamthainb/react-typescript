@@ -1,5 +1,7 @@
 - [x] injectReducer
-- [] multiple theme
-- [] multiple language
-- [] api request common
-- 
+- [x] multiple theme
+- [x] multiple language
+- [] api request common ()
+- [x] protect route
+- [x] prompt route
+- [x] setup with Docker

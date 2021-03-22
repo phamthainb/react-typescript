@@ -1,35 +1,27 @@
-import { Alert } from "@components/Alert";
 /**
  *
  * ProtectRoute
- *
+ * make by phamthainb
  */
-import React, { memo, useEffect, useState } from "react";
-import { Redirect } from "react-router-dom";
-import { ItemRoute } from "src/configs/routes";
-import styled from "styled-components";
+import React, { memo } from 'react';
+import { Redirect, Route, RouteProps } from 'react-router-dom';
+import { Alert } from '@components/Alert';
 
-interface Props {
-  item: ItemRoute;
-  children: JSX.Element;
-}
-
-function ProtectRoute({ item, children }: Props) {
-  const [auth, setAuth] = useState<Boolean>(false);
-
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (!token) setAuth(true);
-  }, [item]);
-
+const CheckRoute = ({ children }: { children: any }) => {
   // if no has token in localStoreage when access to private route
-  if (auth) {
-    Alert({ name: "Đăng nhập lại.", icon: "warning" });
-    return <Redirect to="/" />;
+  if (!localStorage.getItem('token')) {
+    Alert({ name: 'Đăng nhập lại.', icon: 'warning' });
+    return <Redirect to="/login" />;
   }
+  return children;
+};
 
-  return <StylesProtectRoute>{children}</StylesProtectRoute>;
+function ProtectRoute(props: RouteProps) {
+  return (
+    <CheckRoute>
+      <Route {...props} />
+    </CheckRoute>
+  );
 }
-const StylesProtectRoute = styled.div``;
 
 export default memo(ProtectRoute);

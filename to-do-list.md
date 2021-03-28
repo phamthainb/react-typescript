@@ -1,7 +1,9 @@
 - [x] injectReducer
 - [x] multiple theme
 - [x] multiple language
-- [] api request common ()
+- [] api request 
 - [x] protect route
 - [x] prompt route
 - [x] setup with Docker
+- [ ] add more function for plop
+- [ ] 

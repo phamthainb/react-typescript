@@ -7,4 +7,5 @@
 - [x] setup with Docker
 - [ ] add more function for plop
 - [ ] useCheckOS
+- [ ] add Normalize.css
 - [ ] 

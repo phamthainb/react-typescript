@@ -6,6 +6,7 @@
 import { Reducer } from 'redux';
 import { ActionsHome, HomeStore } from './types';
 import * as types from './constants';
+import rootReducer from 'src/redux/root-reducers';
 
 const initState: HomeStore = {
   test: true,
@@ -29,3 +30,6 @@ const reducersHome: Reducer<HomeStore, ActionsHome> = (
 };
 
 export default reducersHome;
+
+export const selectHomeStore = (state: ReturnType<typeof rootReducer>) =>
+  state.Home;

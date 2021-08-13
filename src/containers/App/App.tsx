@@ -18,6 +18,7 @@ import useCountRenders from '@hooks/useCountRenders';
 function App() {
   const { loading } = useSelector(selectAppStore);
   useCountRenders('App');
+
   return (
     <LanguageProvider>
       <ThemeProvider theme={theme}>

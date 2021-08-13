@@ -6,6 +6,7 @@
 import { Reducer } from 'redux';
 import * as types from './constants';
 import { Actions{{properCase name }}, Store{{properCase name }} } from "./types";
+import rootReducer from 'src/redux/root-reducers';
 
 const initState : Store{{properCase name }} = { };
 
@@ -17,3 +18,5 @@ return { ...state };
 };
 
 export default reducers{{properCase name }};
+
+export const select{{properCase name }}Store = ((state: ReturnType<typeof rootReducer>) => state.{{properCase name }})

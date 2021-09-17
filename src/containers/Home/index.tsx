@@ -13,7 +13,6 @@ import message from './message';
 
 import reducersHome from './store/reducers';
 import useInjectReducer from '@redux/useInjectReducer';
-import { requestInter } from '@api/axios';
 
 interface Props {}
 
@@ -26,7 +25,9 @@ function Home({}: Props) {
   useInjectReducer('Home', reducersHome);
 
   const { register, handleSubmit } = useForm<LoginFormData>();
-  const onSubmit = (data: LoginFormData) => console.log(data);
+  const onSubmit = (data: LoginFormData) => {
+    console.log(data);
+  };
   const intl = useIntl();
 
   return (
@@ -45,16 +46,10 @@ function Home({}: Props) {
           />
         </div>
 
-        <Button
-          type="button"
-          onClick={() => {
-            requestInter({ method: 'GET', url: '/users' });
-          }}
-        >
-          Login
-        </Button>
+        <Button type="submit">Login</Button>
       </form>
     </ErrorBound>
   );
 }
+
 export default memo(Home);

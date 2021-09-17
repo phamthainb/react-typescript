@@ -25,7 +25,7 @@
     "extract": "extract-messages --flat=true -d=vi --locales=en,vi --output src/assets/languages 'src/**/message*.ts'",
     "start": "react-app-rewired start",
     "dev": "concurrently --kill-others \"./node_modules/.bin/json-server --watch fake-api/db.js --port 3001 --static fake-api/static --delay 1000\" \"react-app-rewired start\"",
-    "build": "react-app-rewired build",
+    "build": "GENERATE_SOURCEMAP=false react-app-rewired build",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject"
   },

@@ -1,5 +1,5 @@
 import React from 'react';
-import DemoComponent from '@components/DemoComponent';
+import DemoComponent from 'components/DemoComponent';
 
 export interface ItemRoute {
   name: string;

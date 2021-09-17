@@ -3,8 +3,8 @@
  * App types
  *
  */
-import { ActionType } from 'typesafe-actions';
-import * as actions from './actions';
+import { ActionType } from "typesafe-actions";
+import * as actions from "./actions";
 
 export type AppStore = {
   loading: boolean;
@@ -13,7 +13,4 @@ export type AppStore = {
 
 export type ActionsApp = ActionType<typeof actions>;
 
-export enum AppLanguage {
-  vi = 'vi',
-  en = 'en',
-}
+export type AppLanguage = "vi" | "en";

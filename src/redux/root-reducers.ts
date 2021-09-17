@@ -4,12 +4,11 @@
  * phamthainb
  */
 
-import { combineReducers } from 'redux';
-import App from '@containers/App/store/reducers';
-import Home from '@containers/Home/store/reducers';
+import { combineReducers } from "redux";
+import App from "containers/App/store/reducers";
+import Home from "containers/Home/store/reducers";
+import About from "containers/About/store/reducers";
 // [IMPORT NEW CONTAINERSTATE ABOVE] < Needed for generating containers seamlessly
-
-
 
 
 
@@ -17,9 +16,9 @@ import Home from '@containers/Home/store/reducers';
 const rootReducer = combineReducers({
   App,
   Home,
+  About,
   // [INSERT NEW REDUCER KEY ABOVE] < Needed for generating containers seamlessly
 
-  
   });
 
 export default rootReducer;

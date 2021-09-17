@@ -6,7 +6,7 @@
 import { Reducer } from 'redux';
 import { ActionsHome, HomeStore } from './types';
 import * as types from './constants';
-import rootReducer from 'src/redux/root-reducers';
+import rootReducer from 'redux/root-reducers';
 
 const initState: HomeStore = {
   test: true,

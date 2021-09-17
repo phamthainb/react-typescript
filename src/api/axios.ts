@@ -1,6 +1,6 @@
 import axios, { AxiosRequestConfig } from 'axios';
-import store from '@redux/store';
-import { changeLoading } from '@containers/App/store/actions';
+import store from 'redux/store';
+import { changeLoading } from 'containers/App/store/actions';
 
 // define common config for Axios
 const instanceAxios = {

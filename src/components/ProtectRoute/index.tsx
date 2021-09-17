@@ -5,7 +5,7 @@
  */
 import React, { memo } from 'react';
 import { Redirect, Route, RouteProps } from 'react-router-dom';
-import { Alert } from '@components/Alert';
+import { Alert } from 'components/Alert';
 
 const CheckRoute = ({ children }: { children: any }) => {
   // if no has token in localStoreage when access to private route

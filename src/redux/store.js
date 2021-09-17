@@ -5,7 +5,7 @@ import {
   combineReducers,
 } from 'redux';
 import thunk from 'redux-thunk';
-import App from '@containers/App/store/reducers';
+import App from 'containers/App/store/reducers';
 
 const hasExtension =
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();

@@ -1,16 +1,18 @@
-import React, { ReactElement } from 'react';
-import { IntlProvider } from 'react-intl';
-import { useSelector } from 'react-redux';
-import { selectAppStore } from './store/selecters';
+import React, { ReactElement } from "react";
+import { IntlProvider } from "react-intl";
+import { useSelector } from "react-redux";
+import { selectAppStore } from "./store/selecters";
 // json
-import vi from '@assets/languages/vi.json';
-import en from '@assets/languages/en.json';
-import useCountRenders from '@hooks/useCountRenders';
+import vi from "assets/languages/vi.json";
+import en from "assets/languages/en.json";
+import useCountRenders from "hooks/useCountRenders";
 
 const translatesJson = {
   vi: vi,
   en: en,
 };
+
+export type TLang = "vi" | "en";
 
 interface Props {
   children: JSX.Element;
@@ -18,14 +20,14 @@ interface Props {
 
 export default function LanguageProvider({ children }: Props): ReactElement {
   const { lang } = useSelector(selectAppStore);
-  
-  useCountRenders('LanguageProvider');
-  
+
+  useCountRenders("LanguageProvider");
+
   return (
     <IntlProvider
       locale={lang}
-      messages={translatesJson[lang]}
-      defaultLocale={'vi'}
+      messages={lang === "vi" ? translatesJson["vi"] : translatesJson["en"]}
+      defaultLocale={"vi"}
     >
       {children}
     </IntlProvider>

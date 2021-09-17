@@ -5,14 +5,14 @@
  */
 
 import React, { memo } from 'react';
-import ErrorBound from '@components/ErrorBound';
+import ErrorBound from 'components/ErrorBound';
 import { useForm } from 'react-hook-form';
-import Button from '@components/Button';
+import Button from 'components/Button';
 import { useIntl } from 'react-intl';
 import message from './message';
 
 import reducersHome from './store/reducers';
-import useInjectReducer from '@redux/useInjectReducer';
+import useInjectReducer from 'redux/useInjectReducer';
 
 interface Props {}
 
@@ -46,7 +46,7 @@ function Home({}: Props) {
           />
         </div>
 
-        <Button type="submit">Login</Button>
+        <Button type="submit">Login test</Button>
       </form>
     </ErrorBound>
   );
